@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block title %}Блог{% endblock %}
+
+{% block body %}
+<div class="container" style="margin-top: 80px; margin-bottom: 50px;">
+  <div class="row mb-1">
+    <h2 style="text-align: center;"><b>Недавние Посты</b></h2>
+    <div class="col-6">
+
+
+
+    </div>
+    <div class="col-6">
+      <a class="btn btn-primary float-end" href="{% url 'latest' %}" role="button">
+        <i class="bi bi-list-check"></i>
+        Посмотреть все
+      </a>
+    </div>
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top: 20px;">
+    {% for blog in latest %}
+      {% include 'card.html' with blog=blog %}
+    {% endfor %}
+  </div>
+
+  <br><hr>
+
+</div>
+{% endblock %}

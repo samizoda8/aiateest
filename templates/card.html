@@ -1,0 +1,78 @@
+<section class="section courses" id="courses" style="margin-top: 0;">
+  <div class="container">
+    <div class="row"></div>
+    <div class="row event_box">
+        <div class="events_item">
+          <div class="thumb">
+            <a href="{% url 'blogs:blog' blog.slug %}">
+              <img src="{{ blog.thumbnail.url }}" class="card-img-top" alt="blog's thumbnail">
+            </a>
+          </div>
+          <div class="down-content">
+            <a href="{% url 'blogs:blog' blog.slug %}"><h4 class="blog-title">{{ blog.title }}</h4></a>
+            <span>{{ blog.desc|truncatechars:100 }}</span>
+          </div>
+          <div class="row justify-content-evenly mb-1">
+            <div class="col-4">
+              <p class="text-muted float-start">
+                <i class="bi bi-eye"></i>
+                {{ blog.views }}
+              </p>
+            </div>
+            <div class="col-6">
+              <p class="text-muted float-end">
+                <i class="bi bi-clock-history"></i>
+                {{ blog.published_on|timesince }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+
+<!--
+<div class="col">
+  <div class="card h-100">
+    <div class="image-container">
+      <img src="{{ blog.thumbnail.url }}" class="card-img-top" alt="blog's thumbnail">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ blog.title }}</h5>
+      <p class="card-text">{{ blog.desc|truncatechars:100 }}</p>
+    </div>
+    <div class="row justify-content-evenly mb-1">
+      <div class="col-4">
+        <p class="text-muted float-start">
+          <i class="bi bi-eye"></i>
+          {{ blog.views }}
+        </p>
+      </div>
+      <div class="col-6">
+        <p class="text-muted float-end">
+          <i class="bi bi-clock-history"></i>
+          {{ blog.published_on|timesince }}
+        </p>
+      </div>
+    </div>
+    <a class="btn custom-btn w-100" href="{% url 'blogs:blog' blog.slug %}" role="button">Читать далее -></a>
+<style>
+  .custom-btn {
+  color: #59bd79;
+  border-color: #59bd79;
+  background-color: transparent;
+  border-radius: 0.25rem; /* Углы кнопки */
+  transition: all 0.3s ease; /* Плавный переход при наведении */
+}
+
+.custom-btn:hover {
+  color: #ffffff;
+  background-color: #59bd79;
+  border-color: #59bd79;
+}
+
+</style>
+  </div>
+</div>
+-->

@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}Latest{% endblock %}
+
+{% block body %}
+<div class="container" style="margin-top: 100px;">
+  <div class="row mb-1">
+    <h2 style="text-align: center;"><b>Недавние Посты</b></h2>
+    <div class="col-6">
+
+
+
+    </div>
+
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+    {% for blog in blogs %}
+      {% include 'card.html' with blog=blog %}
+    {% endfor %}
+  </div>
+  {% include 'pagination.html' with blogs=blogs %}
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
+body{
+  min-height: 200px;
+  padding-top: 50px;
+  font-family: 'Montserrat', monospace;
+}
+
+footer {
+  background-color: #59bd79;
+}
+
+.copyright-text {
+  background-color:#011d29; 
+}
